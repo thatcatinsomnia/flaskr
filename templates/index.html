@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+    <title>flaskr</title>
+</head>
+<body>
+    {% include 'partial/header.html' %}
+
+    <main class="main">
+        <div class="action">
+            <h2 class="action__title">All Posts</h2>
+            <div class="action__action-box">
+                <button class="btn-add">Add</button>
+            </div>
+        </div>
+
+        <div class="post">
+            <div class="post__header">
+                <div class="post__text-box">
+                    <h1 class="post__title">Hellow, World</h1>
+                    <p class="post__date">bt dev on 2018-02-28</p>
+                </div>
+                
+                <div class="post__action">
+                    <button class="btn-edit">Edit</button>
+                </div>
+            </div>
+
+            <div class="post__content">
+                <p>Today I used Flask, and it was quite nice.</p>
+            </div>
+        </div>
+
+        <div class="post">
+            <div class="post__header">
+                <div class="post__text-box">
+                    <h1 class="post__title">Hellow, World</h1>
+                    <p class="post__date">bt dev on 2018-02-28</p>
+                </div>
+                
+                <div class="post__action">
+                    <button class="btn-edit">Edit</button>
+                </div>
+            </div>
+
+            <div class="post__content">
+                <p>Today I used Flask, and it was quite nice.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
