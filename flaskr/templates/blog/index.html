@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="main">
+    <div class="top">
+        <div class="top__title">
+            All Post
+        </div>
+
+        <a href="{{ url_for('blog.create') }}" class="btn-add">New Post</a>
+    </div>
+
+    
+    <div class="posts">
+        {% for post in posts %}
+        <div class="post">
+            <div class="post__header">
+                <div class="post__text-box">
+                    <h1 class="post__title">{{ post['title'] }}</h1>
+                    <p class="post__date">by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</p>
+                </div>
+                
+                {% if g.user['id'] == post['author_id'] %}
+                <a href="{{ url_for('blog.update', id=post['id']) }}" class="btn-edit">Edit</a>
+                {% endif %}
+            </div>
+    
+            <div class="post__content">
+                <p>{{ post['body'] }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+</main>
+
+{% endblock %}

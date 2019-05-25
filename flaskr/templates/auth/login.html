@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="main">
+    <div class="top__title">
+        Log In
+    </div>
+    
+    <div class="login">
+        {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        <form action="{{ url_for('auth.login') }}" method="post" class="login-form">
+            <label for="username">username</label>
+            <input type="text" class="input__username" name="username" id="username" required>
+
+            <label for="password">password</label>
+            <input type="password" class="input__password" name="password" id="password" required>
+
+            <button class="btn-login" type="submit">Login</button>
+        </form>
+    </div>
+</main>
+{% endblock %}
